@@ -18,8 +18,8 @@ const taskItems=[
 ];
 export type QuestionCase='asian'|'frappuccino';
 const caseData={
-  asian:{shortTitle:'亚运舆情日报',question:'帮我做一份亚运舆情的日报',intro:'已根据 2026 年 9 月 8 日的公开舆情样本整理日报，包含热度、情绪结构、热点事件、品牌机会和风险提示。',path:'/asian-games-daily.html',fileLabel:'亚运舆情日报',meta:'HTML · 2026-09-08'},
-  frappuccino:{shortTitle:'星冰乐产品分析',question:'帮我分析星冰乐 2025 年的产品卖点与用户口碑',intro:'已完成星冰乐 2025 年产品卖点与口碑分析。核心结论、指标表、声量趋势、情感分布和正负面口味对比直接呈现在本次回答中。',path:'/frappuccino-insight.html',fileLabel:'星冰乐 2025 年产品卖点与口碑分析',meta:'HTML · 2025 全年'},
+  asian:{shortTitle:'亚运舆情日报',question:'帮我做一份亚运舆情的日报',intro:'已根据 2026 年 9 月 8 日的公开舆情样本整理日报，包含热度、情绪结构、热点事件、品牌机会和风险提示。',path:'asian-games-daily.html',fileLabel:'亚运舆情日报',meta:'HTML · 2026-09-08'},
+  frappuccino:{shortTitle:'星冰乐产品分析',question:'帮我分析星冰乐 2025 年的产品卖点与用户口碑',intro:'已完成星冰乐 2025 年产品卖点与口碑分析。核心结论、指标表、声量趋势、情感分布和正负面口味对比直接呈现在本次回答中。',path:'frappuccino-insight.html',fileLabel:'星冰乐 2025 年产品卖点与口碑分析',meta:'HTML · 2025 全年'},
 };
 const conversations:[{title:string;time:string;case:QuestionCase},...{title:string;time:string;case?:QuestionCase}[]]=[
   {title:'帮我分析星冰乐 2025 年的产品卖点与口碑',time:'刚刚',case:'frappuccino'},
