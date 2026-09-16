@@ -1,0 +1,63 @@
+.qa-app,.qa-shell,.qa-thread{background:#fbfbfa}
+.qa-topbar{height:52px;flex-basis:52px;padding:0 14px 0 16px;background:#fbfbfa;border-color:#ececeb}
+.qa-title{gap:7px;font-size:12px;color:#979b9f}
+.qa-title>button{width:28px;height:28px;color:#858b90}
+.qa-title b{color:#555b60;font-weight:500}
+.qa-top-actions{gap:1px}
+.qa-top-actions button{height:30px;padding:0 8px;border-radius:6px;color:#888e93;font-size:12px;gap:5px}
+.qa-top-actions button:hover{background:#f0f0ee;color:#555c61}
+.qa-top-actions button:last-child{width:30px;padding:0;justify-content:center;margin-left:2px}
+.qa-scroll{background:#fbfbfa}
+.qa-conversation{padding-top:34px}
+.qa-workspace{background:#fdfdfc;border-color:#e9e9e7}
+.qa-workspace>header{height:46px;padding:0 14px;border-color:#ececea;background:#fdfdfc}
+.qa-workspace>header>span{gap:7px;font-size:13px;color:#444a4f;font-weight:500}
+.qa-workspace>header>span svg{color:#5f9fa9}
+.qa-workspace>header>button{display:none}
+.qa-workspace [data-slot='tabs-list']{height:45px!important;background:#fdfdfc;border-color:#ececea}
+.qa-workspace [data-slot='tabs-trigger']{height:45px;font-size:12px;color:#999da1}
+.qa-workspace [data-slot='tabs-trigger'][data-active]{color:#3e6870}
+.qa-file-card{background:#fbfcfc;border-color:#e5e8e9;box-shadow:none}
+.qa-composer-zone{background:linear-gradient(180deg,#fbfbfa00,#fbfbfa 18%)}
+.qa-thinking{margin:2px 0 18px;border-bottom:1px solid #e7e8e7;color:#777e83}
+.qa-answer-head{display:none}
+.qa-thinking summary{height:34px;display:flex;align-items:center;justify-content:flex-start;gap:3px;cursor:pointer;list-style:none;font-size:12px;line-height:18px;color:#858b90;user-select:none}
+.qa-thinking summary::-webkit-details-marker{display:none}
+.qa-thinking summary svg{transition:transform .16s ease;color:#a0a5a9}
+.qa-thinking[open] summary svg{transform:rotate(90deg)}
+.qa-thinking>div{padding:2px 0 14px;max-width:720px;color:#687077}
+.qa-thinking p{font-size:13px;line-height:1.75;margin:0 0 8px}
+.qa-thinking p:last-child{margin-bottom:0}
+.qa-workspace [data-slot='tabs-list']{grid-template-columns:repeat(3,max-content);justify-content:start;gap:2px;padding:5px 7px;height:44px!important}
+.qa-workspace [data-slot='tabs-trigger']{height:34px;padding:0 9px;gap:5px;border-radius:6px!important;font-size:12px;white-space:nowrap}
+.qa-workspace [data-slot='tabs-trigger']{font-size:0}
+.qa-workspace [data-slot='tabs-trigger']::before{font-size:12px}
+.qa-workspace [data-slot='tabs-trigger']>svg{display:none}
+.qa-workspace [data-slot='tabs-trigger']:nth-child(1)::before{content:'最终产物'}
+.qa-workspace [data-slot='tabs-trigger']:nth-child(2)::before{content:'过程文件'}
+.qa-workspace [data-slot='tabs-trigger']:nth-child(3)::before{content:'我的上传'}
+.qa-workspace [data-slot='tabs-trigger'][data-active]{background:#f5f6f5;color:#454d52;box-shadow:none}
+.qa-workspace [data-slot='tabs-trigger']::after{display:none}
+.qa-workspace [data-slot='tabs-content']{padding:8px 6px}
+.qa-file-list{display:flex;flex-direction:column;gap:1px}
+.qa-file-row{width:100%;min-width:0;height:35px;padding:0 9px;display:flex;align-items:center;gap:8px;border-radius:5px;color:#48a8ae;text-align:left}
+.qa-file-row:hover{background:#f1f2f1}
+.qa-file-row>span{flex:1;min-width:0;display:flex;align-items:center;gap:7px}
+.qa-file-row b{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;color:#3e4449;font-size:13px;line-height:19px;font-weight:400}
+.qa-file-row small{display:none;color:#989ea2;font-size:11px;white-space:nowrap}
+.qa-file-row>svg:last-child{color:#9aa0a4;flex-shrink:0}
+@media(min-width:1250px){.qa-file-row:hover small{display:inline}}
+
+/* Keep the previous tab treatment; only substitute the three labels. */
+.qa-workspace [data-slot='tabs-trigger']::before{content:none!important}
+.qa-workspace [data-slot='tabs-trigger']>svg{display:block}
+.qa-workspace [data-slot='tabs-trigger']::after{display:inline!important;position:static!important;inset:auto!important;width:auto!important;height:auto!important;background:transparent!important;font-size:12px;line-height:18px}
+.qa-workspace [data-slot='tabs-trigger']:nth-child(1)::after{content:'最终产物'}
+.qa-workspace [data-slot='tabs-trigger']:nth-child(2)::after{content:'过程文件'}
+.qa-workspace [data-slot='tabs-trigger']:nth-child(3)::after{content:'我的上传'}
+.qa-workspace [data-slot='tabs-trigger']::before{display:inline!important;order:2;font-size:12px;line-height:18px;white-space:nowrap}
+.qa-workspace [data-slot='tabs-trigger']>svg{order:1}
+.qa-workspace [data-slot='tabs-trigger']:nth-child(1)::before{content:'最终产物'!important}
+.qa-workspace [data-slot='tabs-trigger']:nth-child(2)::before{content:'过程文件'!important}
+.qa-workspace [data-slot='tabs-trigger']:nth-child(3)::before{content:'我的上传'!important}
+.qa-workspace [data-slot='tabs-trigger']::after{content:none!important;display:none!important}

@@ -1,0 +1,14 @@
+/* The collapsed sidebar keeps the new-analysis action as one stable icon button. */
+.group[data-collapsible='icon'] .kv-new {
+  gap: 0 !important;
+  font-size: 0 !important;
+}
+
+.group[data-collapsible='icon'] .kv-new svg {
+  display: block !important;
+  visibility: visible !important;
+  width: 18px !important;
+  height: 18px !important;
+  min-width: 18px !important;
+  color: inherit;
+}

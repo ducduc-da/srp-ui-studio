@@ -1,0 +1,17 @@
+.sidebar-action-row:hover .kv-task-tail time,.sidebar-action-row:focus-within .kv-task-tail time{display:none}
+.sidebar-action-row>.sidebar-actions{position:absolute;right:4px;top:50%;z-index:2;width:26px;height:26px;transform:translateY(-50%);flex:0 0 auto}
+.sidebar-action-row:hover>.sidebar-actions,.sidebar-action-row:focus-within>.sidebar-actions{background:inherit}
+.kv-history .kv-conversation-row>.sidebar-row-primary{height:100%;padding:0!important;justify-content:flex-start}
+.sidebar-action-row:hover .sidebar-row-primary>time,.sidebar-action-row:focus-within .sidebar-row-primary>time,.sidebar-action-row:hover .kv-task-tail time,.sidebar-action-row:focus-within .kv-task-tail time{display:block!important;visibility:hidden}
+.sidebar-rename-dialog{width:min(420px,calc(100vw - 32px))!important;max-width:420px!important;padding:22px!important;gap:0!important;border:1px solid #e2e7e8!important;border-radius:18px!important;background:#fbfbfa!important;color:#333a3f!important;box-shadow:0 22px 70px #27343a24!important}
+.sidebar-rename-dialog [data-slot='dialog-title']{padding-right:30px;font-size:18px;line-height:26px;font-weight:600;color:#30363b}
+.sidebar-rename-dialog [data-slot='dialog-description']{margin-top:2px;font-size:13px;line-height:20px;color:#8b9398}
+.sidebar-rename-dialog [data-slot='dialog-close']{top:14px!important;right:14px!important;width:28px!important;height:28px!important;border-radius:7px!important;color:#767f85!important}
+.sidebar-rename-dialog [data-slot='dialog-close']:hover{background:#eef1f1!important;color:#3f474d!important}
+.sidebar-rename-dialog>input{width:100%;height:38px;margin-top:14px;padding:0 11px;border:1px solid #7ebac4;border-radius:8px;background:#fff;outline:3px solid #39a4b510;font-size:14px;line-height:20px;color:#353c41;box-shadow:none}
+.sidebar-rename-dialog>input:focus{border-color:#3197a8;outline-color:#39a4b51a}
+.sidebar-rename-actions{display:flex!important;justify-content:flex-end!important;align-items:center;gap:8px!important;width:100%;margin-top:18px!important}
+.sidebar-rename-actions>button{height:34px!important;padding:0 15px!important;border:1px solid #dfe4e5!important;border-radius:8px!important;background:#fff!important;color:#555e64!important;font-size:13px!important;font-weight:400!important}
+.sidebar-rename-actions>button:hover{background:#f2f4f4!important;color:#353d42!important}
+.sidebar-rename-actions>.primary{border-color:#3297a7!important;background:#359dac!important;color:#fff!important;box-shadow:0 2px 7px #2e87951f!important}
+.sidebar-rename-actions>.primary:hover{background:#2e8d9c!important}
