@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>星冰乐 2025年产品卖点与口碑分析</title>
+<script src="https://cdn.jsdelivr.net/npm/echarts@5.5.0/dist/echarts.min.js"></script>
+<style>
+  :root {
+    --brand: #2f91a1;
+    --brand-dark: #276e7a;
+    --accent: #e0a43c;
+    --neg: #d95768;
+    --pos: #3aa66b;
+    --neu: #9aa5b1;
+    --bg: #ffffff;
+    --card: #ffffff;
+    --text: #343b43;
+    --text-light: #737e87;
+    --border: #e5eaec;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", "Segoe UI", sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.7;
+  }
+  .header {
+    max-width: 1200px;
+    margin: 0 auto;
+    background: transparent;
+    color: var(--text);
+    padding: 10px 24px 24px;
+    position: relative;
+    overflow: hidden;
+  }
+  .header::after {
+    content: "";
+    position: absolute;
+    right: -60px;
+    top: -60px;
+    width: 280px;
+    height: 280px;
+    border-radius: 50%;
+    display: none;
+  }
+  .header h1 { font-size: 24px; font-weight: 600; letter-spacing: 0; }
+  .header .sub { margin-top: 8px; font-size: 14px; color: var(--text-light); }
+  .header .meta { margin-top: 14px; font-size: 12px; color: var(--text-light); display: flex; gap: 18px; flex-wrap: wrap; }
+  .container { max-width: 1200px; margin: 0 auto; padding: 24px 24px 60px; border-top: 1px solid var(--border); }
+  .section { margin-bottom: 36px; }
+  .section-title {
+    font-size: 20px; font-weight: 700; margin-bottom: 16px;
+    display: flex; align-items: center; gap: 10px;
+  }
+  .section-title .bar {
+    width: 5px; height: 22px; background: var(--brand); border-radius: 3px; display: inline-block;
+  }
+  .insight-card {
+    background: var(--card); border-radius: 12px; padding: 20px 24px;
+    border-left: 3px solid var(--brand); box-shadow: none;
+    margin-bottom: 14px;
+  }
+  .insight-card .tag {
+    display: inline-block; font-size: 12px; font-weight: 600; color: var(--brand);
+    background: rgba(0,112,74,0.08); padding: 2px 10px; border-radius: 20px; margin-bottom: 8px;
+  }
+  .insight-card p { font-size: 14.5px; color: var(--text); }
+  .insight-card .hyp { color: #b0851a; font-size: 13px; margin-top: 8px; }
+  .summary-box {
+    background: var(--card); border-radius: 12px; padding: 24px;
+    box-shadow: none; border: 1px solid var(--border);
+  }
+  .summary-box p { font-size: 14.5px; }
+  .kpi-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 14px; margin-bottom: 16px; }
+  .kpi {
+    background: var(--card); border-radius: 12px; padding: 18px 20px;
+    box-shadow: none; border: 1px solid var(--border);
+  }
+  .kpi .label { font-size: 12.5px; color: var(--text-light); }
+  .kpi .value { font-size: 26px; font-weight: 700; margin-top: 4px; color: var(--brand); }
+  .kpi .note { font-size: 12px; color: var(--text-light); margin-top: 2px; }
+  table { width: 100%; border-collapse: collapse; background: var(--card); border-radius: 12px; overflow: hidden; box-shadow: none; border:1px solid var(--border); }
+  th { background: var(--brand); color: #fff; text-align: left; padding: 12px 16px; font-size: 13.5px; font-weight: 600; }
+  td { padding: 11px 16px; font-size: 13.5px; border-bottom: 1px solid var(--border); }
+  tr:nth-child(even) td { background: #f8fafb; }
+  .chart-box { background: var(--card); border-radius: 12px; padding: 16px; box-shadow: none; border: 1px solid var(--border); }
+  .chart { width: 100%; height: 380px; }
+  .chart-tall { height: 460px; }
+  .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  @media (max-width: 800px) { .two-col { grid-template-columns: 1fr; } }
+  .good-list, .bad-list { list-style: none; }
+  .good-list li, .bad-list li {
+    background: var(--card); border-radius: 10px; padding: 14px 18px; margin-bottom: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04); font-size: 14px; border: 1px solid var(--border);
+  }
+  .good-list .h { font-weight: 700; color: var(--brand); font-size: 14.5px; }
+  .bad-list .h { font-weight: 700; color: var(--neg); font-size: 14.5px; }
+  .good-list .d, .bad-list .d { color: var(--text-light); font-size: 13px; margin-top: 2px; }
+  .bad-table th { background: #b04a4a; }
+  .footer { text-align: center; color: var(--text-light); font-size: 12.5px; padding: 20px; border-top: 1px solid var(--border); margin-top: 20px; }
+  .pill { display: inline-block; padding: 2px 10px; border-radius: 20px; font-size: 12px; font-weight: 600; }
+  .pill.pos { background: rgba(52,199,123,0.12); color: #1e9e5c; }
+  .pill.neg { background: rgba(232,90,90,0.12); color: #c03a3a; }
+  .pill.neu { background: rgba(154,165,177,0.15); color: #6b7887; }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1>☕ 星冰乐 · 2025年产品卖点与口碑分析</h1>
+  <div class="sub">基于国内社媒全量数据（小红书 / 抖音 / 微博 / 公众号 / B站 / 知乎 / 论坛）</div>
+  <div class="meta">
+    <span>📅 统计周期：2025-01-01 至 2025-12-31</span>
+    <span>📊 关键词口径：「星巴克 + 星冰乐」（已过滤「赛车星冰乐」「外卖星冰乐」噪声）</span>
+  </div>
+</div>
+
+<div class="container">
+
+  <!-- ========== 核心洞察 ========== -->
+  <div class="section">
+    <div class="section-title"><span class="bar"></span>核心洞察</div>
+
+    <div class="insight-card">
+      <span class="tag">洞察 01</span>
+      <p><strong>「低价扩声量、IP 引深互动」是 2025 年星冰乐的双引擎，且两者分属不同月份。</strong>
+      7 月「23 元起夏日焕新」制造了全年最大声量峰（小红书单月 1.59 万条，约为 1 月的 <b>24 倍</b>），
+      同时净情感度冲到全年最高 81 分，价格策略罕见地实现了「声量 + 口碑」双赢；
+      而 5 月五月天联名款虽声量次高，互动量却登顶全年（29.2 万），说明 IP 联名驱动的是<b>粉丝深互动</b>而非泛声量。</p>
+      <div class="hyp">⚑ 待验证假设：若 7 月低价与 5 月联名策略叠加，可能形成年度级现象传播。</div>
+    </div>
+
+    <div class="insight-card">
+      <span class="tag">洞察 02</span>
+      <p><strong>抹茶星冰乐是 2025 年口碑的「双刃剑」：既是第一卖点，也是最大痛点。</strong>
+      正面讨论中「抹茶」被提及 344 次居首，但负面提及高达 292 次、显著高于其他口味——
+      负面集中在「抹茶粉换了供应商、有生味、颜色偏绿、疑似与瑞幸同源」的供应链变更质疑。
+      经典款是口碑基石，动供应链的风险远高于新品。</p>
+    </div>
+
+    <div class="insight-card">
+      <span class="tag">洞察 03</span>
+      <p><strong>产品叙事已彻底「奶茶化 / 甜品化」，口碑收益与品牌风险并存。</strong>
+      高频词清一色是草莓、爆珠、黑巧、芝士、可可、焦糖等甜品元素，用户心智中它已从「咖啡」滑向「高糖甜品」——
+      一方面承接了年轻女性「下午茶 + 追星 + 打卡」需求，另一方面「太甜」「像小糖水」成为负面高频，正在稀释星巴克的高端咖啡心智。</p>
+    </div>
+  </div>
+
+  <!-- ========== 结论摘要 ========== -->
+  <div class="section">
+    <div class="section-title"><span class="bar"></span>结论摘要</div>
+    <div class="summary-box">
+      <p>
+      2025 年星冰乐的产品卖点围绕 <b>四条主线</b>：
+      ① <b>经典爆款升级回归</b>（草莓芝心爆珠、比利时黑巧）；
+      ② <b>IP 联名</b>（五月天、史努比）带动粉丝经济；
+      ③ <b>原料健康化叙事</b>（茶拿铁 2.0、原叶整茶、0 反式脂肪、武义一级抹茶）；
+      ④ <b>季节限定 + 价格下探</b>（太妃榛果、香水粉椰、23 元起）。
+      </p>
+      <p style="margin-top:12px">
+      全年口碑 <b>正面 25.5% / 中性 69.5% / 负面 5.0%</b>，正负声量比约 <b>5.1 : 1</b>，整体健康；
+      但负面互动占比达 <b>9.0%</b>，吐槽内容有超比例传播力，痛点集中在<b>甜、贵、抹茶换料</b>三件事。
+      </p>
+    </div>
+  </div>
+
+  <!-- ========== 核心指标 ========== -->
+  <div class="section">
+    <div class="section-title"><span class="bar"></span>核心指标</div>
+    <div class="kpi-grid">
+      <div class="kpi"><div class="label">年度总声量</div><div class="value">12.29万</div><div class="note">全平台合计</div></div>
+      <div class="kpi"><div class="label">正负声量比</div><div class="value">5.1 : 1</div><div class="note">正面 31,346 vs 负面 6,164</div></div>
+      <div class="kpi"><div class="label">声量峰值月</div><div class="value">7月</div><div class="note">1.59万条 ≈ 1月的24倍</div></div>
+      <div class="kpi"><div class="label">口碑最佳月</div><div class="value">7月</div><div class="note">NSR 81 全年最高</div></div>
+      <div class="kpi"><div class="label">互动峰值月</div><div class="value">5月</div><div class="note">29.2万互动（五月天联名）</div></div>
+      <div class="kpi"><div class="label">平台互动TOP</div><div class="value">抖音 74.7%</div><div class="note">互动量 1491.3万</div></div>
+    </div>
+
+    <table>
+      <tr>
+        <th>维度</th><th>指标</th><th>数值</th>
+      </tr>
+      <tr><td rowspan="3">年度情感</td><td>正面 / 中性 / 负面</td><td>31,346 / 85,383 / 6,164（25.5% / 69.5% / 5.0%）</td></tr>
+      <tr><td>年度互动（正面/中性/负面）</td><td>235.0万 / 1609.1万 / 182.2万</td></tr>
+      <tr><td>负面互动占比</td><td>9.0%（超声量占比 5.0%，吐槽传播力更强）</td></tr>
+      <tr><td rowspan="3">平台分布</td><td>声量 TOP3</td><td>小红书 48,160（39.2%）/ 抖音 33,313（27.1%）/ 微博 32,550（26.5%）</td></tr>
+      <tr><td>互动 TOP</td><td>抖音 1491.3万（占 74.7%）</td></tr>
+      <tr><td>小红书声量结构</td><td>UGC 95.5% / PGC 4.5%（PGC 贡献 83.5% 互动）</td></tr>
+      <tr><td rowspan="2">关键节点</td><td>声量峰值</td><td>7 月「23 元起夏日焕新」（15,861 条）</td></tr>
+      <tr><td>互动峰值</td><td>5 月五月天联名（草莓爆珠声量 1,541 条 / 互动 29.2 万）</td></tr>
+    </table>
+  </div>
+
+  <!-- ========== 图表 ========== -->
+  <div class="section">
+    <div class="section-title"><span class="bar"></span>趋势与分布</div>
+    <div class="two-col">
+      <div class="chart-box">
+        <div id="chartTrend" class="chart"></div>
+      </div>
+      <div class="chart-box">
+        <div id="chartSentiment" class="chart"></div>
+      </div>
+    </div>
+    <div style="height:16px"></div>
+    <div class="chart-box">
+      <div id="chartFlavor" class="chart chart-tall"></div>
+    </div>
+  </div>
+
+  <!-- ========== 好的点 ========== -->
+  <div class="section">
+    <div class="section-title"><span class="bar"></span>好的点：产品卖点</div>
+    <div class="two-col">
+      <div>
+        <ul class="good-list">
+          <li><div class="h">① 经典爆款「升级回归」打底</div>
+            <div class="d">草莓芝心爆珠（三重芝士牛乳+丹东红颜草莓+海盐芝士爆珠+饼干碎）；比利时黑巧（57%黑巧碎，被称「王炸回归」）。</div></li>
+          <li><div class="h">② IP 联名制造圈层爆点</div>
+            <div class="d">五月天联名（4-5月）：4款饮品+透卡周边，「抢不到票但喝得到同款」成传播钩子；史努比联名（3月）：可可星冰乐+漫画展。</div></li>
+        </ul>
+      </div>
+      <div>
+        <ul class="good-list">
+          <li><div class="h">③ 原料健康化叙事升级</div>
+            <div class="d">茶拿铁2.0：原叶整茶+纯牛奶/燕麦奶+0反式脂肪、无植脂末/香精/甜味剂；抹茶升级为浙江武义一级抹茶、超千目低温精研。</div></li>
+          <li><div class="h">④ 季节限定 + 价格策略扩圈</div>
+            <div class="d">太妃榛果（11-12月怀旧回归）；香水粉椰（9月泰国1%香水椰）；23元起夏日焕新菜单（7月）直接拉高声量至全年峰值。</div></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========== 不好的点 ========== -->
+  <div class="section">
+    <div class="section-title"><span class="bar"></span>不好的点：用户吐槽</div>
+    <div class="chart-box" style="padding:0; border:none; box-shadow:none; background:transparent;">
+      <table class="bad-table">
+        <tr><th>痛点</th><th>用户原声证据</th><th>影响评估</th></tr>
+        <tr><td><span class="pill neg">高频</span> 太甜</td><td>「默认模式的糖真的一口齁甜」「星冰乐跟小糖水一样，没以前好喝」</td><td>跨口味高频、稀释咖啡心智</td></tr>
+        <tr><td><span class="pill neg">高频</span> 贵</td><td>「一杯星冰乐好贵」「超级客制化做的头晕，一看 28 元天塌了」</td><td>价格敏感型用户流失</td></tr>
+        <tr><td><span class="pill neg">中频</span> 抹茶换料争议</td><td>「星冰乐居然换抹茶粉了，幸福感没有了」「有生味、颜色偏绿，怀疑和瑞幸同供应商」</td><td>经典款口碑受损，8月抹茶声量高但伴随质疑</td></tr>
+        <tr><td><span class="pill neg">中频</span> 联名周边饥饿营销</td><td>「透卡被取消订单」「一开始没有强调到位，没买到」</td><td>粉丝情绪反噬</td></tr>
+        <tr><td><span class="pill neg">低频</span> 制作复杂/员工压力</td><td>「这两款星冰乐巨难做，熬夜背配方」</td><td>出品稳定性风险</td></tr>
+        <tr><td><span class="pill neg">低频</span> 品牌经营负面</td><td>「员工被迫垫钱买月饼」「商场开始清退星巴克」「5次卡 bug 成 25 次卡 149 元」</td><td>品牌形象杂音</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <!-- ========== 业务含义 ========== -->
+  <div class="section">
+    <div class="section-title"><span class="bar"></span>对业务的含义</div>
+    <div class="summary-box">
+      <p>1. <b>抹茶换供应商是 2025 年最值得复盘的口碑事件</b>：它证明经典款 SKU 的供应链变更会被忠实用户精确感知并放大传播。若 2026 年继续调整经典款配方，建议提前做「升级沟通」而非静默变更。</p>
+      <p style="margin-top:12px">2. <b>「甜品化」路线用户买账，但要在包装和话术上保留咖啡专业度</b>，否则「星巴克=小糖水」的认知一旦固化，未来推高价精品咖啡线会遇到心智阻力。</p>
+      <p style="margin-top:12px">3. <b>2026 年可复制的节奏模板已清晰</b>：Q1 IP 联名蓄水 → Q2 粉丝互动冲高 → Q3 低价换广度 + 口碑 → Q4 季节限定收尾，但需避免联名周边再出现「饥饿营销」反噬。</p>
+    </div>
+  </div>
+
+  <div class="footer">
+    数据来源：聚合全量库社媒数据（ODP）· 本报告由 SocialClaw Instant Insight 生成
+  </div>
+</div>
+
+<script>
+  // 图1：月度声量/互动/NSR 趋势
+  var chartTrend = echarts.init(document.getElementById('chartTrend'));
+  chartTrend.setOption({
+    title: { text: '2025年月度声量 / 互动 / NSR（小红书）', left: 'center', textStyle: { fontSize: 14 } },
+    tooltip: { trigger: 'axis' },
+    legend: { data: ['声量(帖)', '互动量(千)', 'NSR'], top: 28 },
+    grid: { left: 55, right: 55, bottom: 35, top: 65 },
+    xAxis: { type: 'category', data: ['1月','2月','3月','4月','5月','6月','7月','8月','9月','10月','11月','12月'] },
+    yAxis: [
+      { type: 'value', name: '声量/互动' },
+      { type: 'value', name: 'NSR', min: 0, max: 100 }
+    ],
+    series: [
+      { name: '声量(帖)', type: 'line', smooth: true, data: [665,1029,2053,6287,9417,4347,15861,4767,3549,3062,2235,1530],
+        areaStyle: { opacity: 0.15 }, lineStyle: { color: '#00704a', width: 3 },
+        itemStyle: { color: '#00704a' },
+        markPoint: { data: [{ type: 'max', name: '峰值' }], label: { fontSize: 10 } } },
+      { name: '互动量(千)', type: 'line', smooth: true, data: [61,75,162,246,292,132,185,124,104,148,89,25],
+        lineStyle: { color: '#d4a83c', width: 2 }, itemStyle: { color: '#d4a83c' } },
+      { name: 'NSR', type: 'line', yAxisIndex: 1, smooth: true, data: [50,44,63,51,63,51,81,52,66,51,59,63],
+        lineStyle: { type: 'dashed', color: '#9aa5b1', width: 2 }, itemStyle: { color: '#9aa5b1' } }
+    ]
+  });
+
+  // 图2：情感分布
+  var chartSent = echarts.init(document.getElementById('chartSentiment'));
+  chartSent.setOption({
+    title: { text: '2025年星冰乐情感分布（全平台）', left: 'center', textStyle: { fontSize: 14 } },
+    tooltip: { trigger: 'item', formatter: '{b}: {c} ({d}%)' },
+    legend: { top: 30 },
+    series: [{
+      type: 'pie', radius: ['40%', '68%'], center: ['50%', '55%'],
+      label: { formatter: '{b}\n{c} ({d}%)', fontSize: 12 },
+      data: [
+        { name: '中性', value: 85383, itemStyle: { color: '#9aa5b1' } },
+        { name: '正面', value: 31346, itemStyle: { color: '#34c77b' } },
+        { name: '负面', value: 6164, itemStyle: { color: '#e85a5a' } }
+      ]
+    }]
+  });
+
+  // 图3：正负面口味关键词对比
+  var chartFlavor = echarts.init(document.getElementById('chartFlavor'));
+  chartFlavor.setOption({
+    title: { text: '正负面讨论中的口味 / 卖点关键词对比（小红书）', left: 'center', textStyle: { fontSize: 14 } },
+    tooltip: { trigger: 'axis', axisPointer: { type: 'shadow' } },
+    legend: { data: ['正面提及', '负面提及'], top: 28 },
+    grid: { left: 70, right: 50, bottom: 40, top: 65 },
+    xAxis: { type: 'value', name: '提及次数' },
+    yAxis: { type: 'category', data: ['抹茶','草莓','椰','芒果','可可','芝士','焙茶','黑巧','香草','爆珠','焦糖','太妃'] },
+    series: [
+      { name: '正面提及', type: 'bar', data: [344,128,468,51,138,133,56,94,66,116,84,210],
+        itemStyle: { color: '#34c77b', borderRadius: [0,4,4,0] }, label: { show: true, position: 'right', fontSize: 10 } },
+      { name: '负面提及', type: 'bar', data: [292,69,59,44,39,39,32,25,23,16,13,11],
+        itemStyle: { color: '#e85a5a', borderRadius: [0,4,4,0] }, label: { show: true, position: 'right', fontSize: 10 } }
+    ]
+  });
+
+  window.addEventListener('resize', function () {
+    chartTrend.resize();
+    chartSent.resize();
+    chartFlavor.resize();
+  });
+</script>
+
+</body>
+</html>

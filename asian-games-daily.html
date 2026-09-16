@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>亚运舆情日报 · 2026-09-08</title>
+<style>
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{background:#f4f7f8;font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei","Helvetica Neue",sans-serif;color:#343b43;padding:20px 14px 40px;line-height:1.7;}
+  .wrap{max-width:880px;margin:0 auto;}
+  .hero{background:linear-gradient(135deg,#267d8d 0%,#39a4b5 56%,#75c5c2 100%);border-radius:16px;padding:28px 24px;color:#fff;box-shadow:0 8px 24px rgba(48,143,159,.18);}
+  .hero .tag{display:inline-block;background:rgba(255,255,255,.22);font-size:12px;padding:2px 10px;border-radius:20px;letter-spacing:1px;margin-bottom:10px;}
+  .hero h1{font-size:26px;font-weight:700;letter-spacing:1px;}
+  .hero .sub{font-size:13px;opacity:.92;margin-top:6px;}
+  .card{background:#fff;border:1px solid #e8eef0;border-radius:14px;padding:22px;margin-top:16px;box-shadow:0 2px 10px rgba(45,71,78,.045);}
+  h2{font-size:18px;color:#2f7480;margin-bottom:14px;padding-left:12px;border-left:4px solid #39a4b5;line-height:1.4;}
+  h3{font-size:15px;color:#347d89;margin:18px 0 8px;}
+  p{font-size:14px;color:#46515a;}
+  .muted{color:#7f8a93;font-size:12px;}
+  /* KPI */
+  .kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:8px;}
+  .kpi{background:#fff;border-radius:12px;padding:16px 12px;text-align:center;border:1px solid #dcebed;box-shadow:0 2px 8px rgba(48,143,159,.06);}
+  .kpi .num{font-size:26px;font-weight:800;color:#2f8897;letter-spacing:.5px;line-height:1.2;}
+  .kpi .num.star{color:#f2b33d;font-size:22px;letter-spacing:2px;}
+  .kpi .lab{font-size:12px;color:#66727b;margin-top:6px;}
+  .kpi .foot{font-size:10px;color:#a0a9b0;margin-top:6px;line-height:1.5;}
+  /* 表格 */
+  table{width:100%;border-collapse:collapse;font-size:13px;margin-top:8px;}
+  th{background:#edf5f7;color:#2f6f7a;font-weight:600;padding:8px 6px;text-align:left;border-bottom:2px solid #d5e7ea;}
+  td{padding:8px 6px;border-bottom:1px solid #edf1f2;color:#46515a;vertical-align:top;}
+  tr:last-child td{border-bottom:none;}
+  .tag-green{display:inline-block;background:#e8f5ed;color:#398157;border-radius:4px;padding:0 6px;font-size:12px;font-weight:600;}
+  .tag-red{display:inline-block;background:#fbe4e7;color:#d05a6a;border-radius:4px;padding:0 6px;font-size:12px;font-weight:600;}
+  .tag-gray{display:inline-block;background:#eef1f2;color:#66717a;border-radius:4px;padding:0 6px;font-size:12px;font-weight:600;}
+  /* 情绪分布 */
+  .sentiment-wrap{display:flex;align-items:center;gap:24px;flex-wrap:wrap;margin-top:6px;}
+  .donut{width:170px;height:170px;border-radius:50%;position:relative;flex-shrink:0;}
+  .donut .hole{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:100px;height:100px;background:#fff;border-radius:50%;display:flex;flex-direction:column;align-items:center;justify-content:center;}
+  .donut .hole b{font-size:22px;color:#3d8b3f;}
+  .donut .hole span{font-size:11px;color:#7b8a7b;}
+  .legend{flex:1;min-width:200px;}
+  .legend-row{display:flex;align-items:center;gap:8px;font-size:13px;color:#3c4a3c;margin-bottom:8px;}
+  .legend-row .dot{width:12px;height:12px;border-radius:3px;flex-shrink:0;}
+  .bar-wrap{flex:1;background:#eef4ea;border-radius:4px;height:10px;overflow:hidden;min-width:80px;}
+  .bar{height:10px;border-radius:4px;}
+  .bar-p{background:#6cbb3f;}
+  .bar-n{background:#aed3a0;}
+  .bar-neg{background:#ef97a0;}
+  .sent-block{margin-top:16px;padding:12px 14px;border-radius:10px;background:#f7fbf2;font-size:13px;color:#3c4a3c;}
+  .sent-block b{color:#3d8b3f;}
+  ul{margin:6px 0 0 18px;font-size:13px;color:#3c4a3c;}
+  li{margin-bottom:4px;}
+  ol{margin:6px 0 0 18px;font-size:13px;color:#3c4a3c;}
+  .quote{background:#f4f9ee;border-left:3px solid #6cbb3f;padding:8px 12px;margin:8px 0;font-size:13px;color:#445744;border-radius:0 8px 8px 0;}
+  .quote .src{display:block;font-size:11px;color:#8aa08a;margin-top:4px;}
+  .divider{height:1px;background:#e6efe0;margin:16px 0;}
+  .risk{color:#b05555;}
+  @media(max-width:640px){
+    .kpis{grid-template-columns:repeat(2,1fr);}
+    .sentiment-wrap{flex-direction:column;align-items:flex-start;}
+    .hero h1{font-size:21px;}
+    table{font-size:12px;}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="hero">
+    <span class="tag">伊利 · 亚运专题舆情日报</span>
+    <h1>亚运舆情日报</h1>
+    <div class="sub">数据日期：2026年9月8日（星期二）· 名古屋亚运会开幕倒计时 11 天</div>
+  </div>
+
+  <!-- 章节1 核心关键词热度分析 -->
+  <div class="card">
+    <h2>1 核心关键词热度分析</h2>
+
+    <div class="kpis">
+      <div class="kpi"><div class="num">16416</div><div class="lab">全平台总声量</div></div>
+      <div class="kpi"><div class="num">1330544</div><div class="lab">全平台总互动量</div></div>
+      <div class="kpi"><div class="num star">★★★★☆</div><div class="lab">热度等级</div></div>
+      <div class="kpi">
+        <div class="num">53%</div><div class="lab">净NSR</div>
+        <div class="foot">净NSR=(正面−负面)÷(正面+负面)，分母不含中性；正值越大正面净优势越强</div>
+      </div>
+    </div>
+
+    <h3>数据解读</h3>
+    <p>报告日「亚运会/亚运」全平台可检索声量 <b>16416</b>、互动 <b>1330544</b>，热度处于 <b>★★★★☆（4星高位）</b>。微博与抖音各扛约 35% 声量，但互动高度集中于抖音（92%）：第五人格「追光逐梦」亚运主题官方 PGC 与中国田径队「2026亚运我来了」集结视频构成当日互动引擎。整体情绪以中性为主（62%），正面 29%、负面 9%，净NSR <b>53%</b>，正面预期明显占优。</p>
+    <p style="margin-top:8px;">抖音单平台声量 5818，较 9 月 5 日峰值（11021，名单与缺席争议发酵日）回落至倒计时预热平台期，议题由「名单官宣争议」切换为「电竞直播、冲金赛程与田径队出征群像」，当日 5 条亚运相关热搜在榜（最高 B 站第 11）。末句收口：<b>亚运话题仍处高位并转向观赛预期与选手群像叙事，是品牌绑定观赛陪伴、能量补给与年轻电竞圈层的窗口期。</b></p>
+
+    <h3>阶段演进表</h3>
+    <table>
+      <tr><th>时间</th><th>传播阶段</th><th>关键信号</th></tr>
+      <tr><td>09-02</td><td>预热期</td><td>抖音声量 9194，体育与游戏圈层预热启动</td></tr>
+      <tr><td>09-03</td><td>回调期</td><td>声量回落至 6414，等待中国代表团名单</td></tr>
+      <tr><td>09-04</td><td>升温点</td><td>代表团名单公布带动声量回升至 8789，缺席话题露头</td></tr>
+      <tr><td>09-05</td><td>发酵峰值</td><td>抖音单平台声量峰值 11021，全红婵樊振东缺席等话题集中发酵</td></tr>
+      <tr><td>09-06</td><td>回落期</td><td>声量 6084，议题向赛程观赛切换</td></tr>
+      <tr><td>09-07</td><td>回落期</td><td>声量 6033，等待赛程与开赛信息</td></tr>
+      <tr><td>09-08</td><td>高位平稳</td><td>声量 5818、互动 1219715，第五人格亚运主题/田径队出征成互动引擎</td></tr>
+    </table>
+
+    <h3>平台结构表</h3>
+    <table>
+      <tr><th>平台</th><th>声量占比</th><th>互动占比</th><th>角色</th></tr>
+      <tr><td>微博</td><td>35%</td><td>6%</td><td>名单/争议/粉丝舆论主阵地</td></tr>
+      <tr><td>抖音</td><td>35%</td><td>92%</td><td>赛事与选手视频互动引擎</td></tr>
+      <tr><td>种草平台</td><td>15%</td><td>1%</td><td>亚运观赛装备/穿搭/好物种草</td></tr>
+      <tr><td>微信公众号</td><td>12%</td><td>0%</td><td>官方发布与深度解读</td></tr>
+      <tr><td>B站/论坛/知乎</td><td>2%</td><td>1%</td><td>电竞内容与问答补充</td></tr>
+    </table>
+
+    <h3>平台热搜佐证</h3>
+    <table>
+      <tr><th>热搜词条</th><th>平台</th><th>最高排名</th></tr>
+      <tr><td>第五人格亚运主题故事爆料</td><td>哔哩哔哩</td><td>11</td></tr>
+      <tr><td>亚运国足战伊朗前瞻</td><td>哔哩哔哩</td><td>27</td></tr>
+      <tr><td>第五人格亚运版本活动爆料</td><td>抖音APP</td><td>29</td></tr>
+      <tr><td>央视直播亚运会王者荣耀比赛</td><td>新浪微博</td><td>36</td></tr>
+      <tr><td>亚运会电子竞技项目有直播</td><td>新浪微博</td><td>46</td></tr>
+    </table>
+  </div>
+
+  <!-- 章节2 核心关键词舆情结构 -->
+  <div class="card">
+    <h2>2 核心关键词舆情结构</h2>
+
+    <h3>舆情情绪分布</h3>
+    <div class="sentiment-wrap">
+      <div class="donut" style="background:conic-gradient(#6cbb3f 0% 29%, #aed3a0 29% 91%, #ef97a0 91% 100%);">
+        <div class="hole"><b>91%</b><span>非负面占比</span></div>
+      </div>
+      <div class="legend">
+        <div class="legend-row"><span class="dot" style="background:#6cbb3f;"></span>正面 29%<div class="bar-wrap"><div class="bar bar-p" style="width:29%;"></div></div></div>
+        <div class="legend-row"><span class="dot" style="background:#aed3a0;"></span>中性 62%<div class="bar-wrap"><div class="bar bar-n" style="width:62%;"></div></div></div>
+        <div class="legend-row"><span class="dot" style="background:#ef97a0;"></span>负面 9%<div class="bar-wrap"><div class="bar bar-neg" style="width:9%;"></div></div></div>
+      </div>
+    </div>
+
+    <h3>从互动看</h3>
+    <p>中性内容吃下 <b>65%</b> 互动（第五人格「追光逐梦」官方 PGC 爆款视频、赛程与直播信息转发拉动），正面互动 <b>34%</b>，负面互动仅 <b>1%</b>——负面声量 9% 但互动势能极弱，属圈层化吐槽、未形成破圈传播。</p>
+
+    <div class="divider"></div>
+    <div class="sent-block">
+      <b>正面在讨论什么：</b>中国田径队定妆照集结与「2026亚运我来了」出征群像（林雨薇、刘峡君、孔莹蓥、汪顺、石智勇等）；乒乓赛程公布、孙颖莎确认出战带来的观赛期待；电竞选手入选庆祝与应援（桃晚安成为电竞项目唯一入选女运动员大屏点亮、清融/一诺粉丝祝福）。
+    </div>
+    <div class="sent-block">
+      <b>中性在讨论什么：</b>亚运电竞 4 项目央视直播与冲金赛程信息转发（永劫无间/王者荣耀/和平精英亚运版/第五人格）；第五人格「追光逐梦」版本官方物料扩散；观赛攻略与「早起看比赛」提醒。
+    </div>
+    <div class="sent-block">
+      <b>负面在讨论什么：</b>全红婵、樊振东缺席名单的遗憾与质疑；电竞选拔「内定/萝卜坑」举报拉锯与粉丝互撕（AG/一诺、JDG/清融、第五人格 ivl 圈层）；网传石宇奇打完亚运会退役。
+    </div>
+    <div class="sent-block">
+      <b>负面定性：</b>负面集中于「名单遗憾 + 电竞圈层内耗」，无安全/产品类风险，负面互动仅占 1%，属可预测、可管控的圈层吐槽，未升级为全网负面事件。
+    </div>
+    <div class="sent-block">
+      <b>整体舆情倾向收口：</b>观赛期待与「为国出征」群像情绪是主线（净NSR 53%、抖音互动强势），正面预期主导；争议集中在名单与电竞粉丝圈层，对品牌以群像与观赛场景借势整体友好，但需避开个体运动员争议与健康、身材敏感话题。
+    </div>
+  </div>
+
+  <!-- 章节3 今日主要热点 -->
+  <div class="card">
+    <h2>3 今日主要热点</h2>
+    <ol>
+      <li style="margin-bottom:6px;"><span class="tag-green">高位</span> 亚运倒计时 11 天：电竞 4 项目央视直播 + 冲金赛程公布（永劫无间 9/24 起早场），观赛期待升温</li>
+      <li style="margin-bottom:6px;"><span class="tag-green">爆款</span> 第五人格「追光逐梦」亚运主题上线：抖音官方 3 条 PGC 合计互动 37.2 万，二创进互动头部，成当日互动引擎</li>
+      <li style="margin-bottom:6px;"><span class="tag-green">期待</span> 中国田径队定妆照集结、林雨薇/刘峡君/孔莹蓥等「2026亚运我来了」出征叙事刷屏，单条最高 4.6 万互动</li>
+      <li style="margin-bottom:6px;"><span class="tag-green">期待</span> 乒乓赛程公布、孙颖莎确认出战，粉丝「终于能见到孙颖莎」</li>
+      <li style="margin-bottom:6px;"><span class="tag-red">争议</span> 全红婵樊振东缺席余温 + 网传石宇奇退役 + 电竞「内定」质疑轮番出现</li>
+      <li style="margin-bottom:6px;"><span class="tag-gray">中性</span> 王楚钦备战亚运状态不错引关注，退赛后回归话题再起</li>
+    </ol>
+  </div>
+
+  <!-- 章节4 热点事件分析 -->
+  <div class="card">
+    <h2>4 热点事件分析</h2>
+
+    <h3>事件一：第五人格「追光逐梦」官方借势成互动引擎</h3>
+    <p>「央视直播亚运会王者荣耀比赛」「亚运会电子竞技项目有直播」热搜在榜，中国电竞队将出战永劫无间、王者荣耀、和平精英亚运版、第五人格四个项目且多为早场。第五人格官方同步上线「追光逐梦」亚运主题（版本活动 + 免费紫皮三选一 + 故事视频），当日抖音平台 3 条官方 PGC 视频合计互动 37.2 万，小小小砸墨等二创亦进入互动头部（单条最高 6.8 万），直接把「游戏 × 亚运」做成爆点。</p>
+    <div class="quote">妈呀这设计看上去帅帅的！孽蜥亚运会紫皮海报爆料！<span class="src">抖音 · 小小小砸墨 · 09-08</span></div>
+    <div class="quote">所有人立马攒好紫薯迎接亚运会限定时装‼️<span class="src">抖音 · 鱼笙笙（第五人格小鱼）· 09-08</span></div>
+    <p style="margin-top:8px;"><b>对伊利的机会：</b>电竞观赛场景明确（早场比赛 + 熬夜/早起 + 观赛仪式感），是乳饮/能量补给的自然语境；玩家以年轻群体为主，「观赛搭子 + 早餐奶/即饮奶」具备内容结合空间，但需避免硬广口吻。</p>
+
+    <h3>事件二：田径队与乒乓名将「为国出征」群像叙事</h3>
+    <p>报告日互动头部被「2026亚运我来了」「中国田径队」话题占据：林雨薇单条 4.6 万互动、刘峡君首征亚运被多方祝福、田径队接力定妆照 2.8 万互动，汪顺、石智勇等宁大学子亮相被高校账号传播；乒乓侧孙颖莎确认出战，赛程公布带动「终于能见到莎莎」的粉丝期待。这类群像内容正情绪最稳、互动持续。</p>
+    <div class="quote">为国出征，亚运逐梦🔥 汪顺、石智勇等宁大学子亮相亚运赛场。以拼搏赴赛场，等你们凯旋！<span class="src">微博 · 宁波大学 · 09-08</span></div>
+    <div class="quote">刘峡君首次征战亚运 祝她好运！<span class="src">抖音 · 无敌小鵬 · 09-08</span></div>
+    <p style="margin-top:8px;"><b>对伊利的机会：</b>「为国出征、等你们凯旋」的群像情感最稳、最可借势，适合品牌以陪伴者身份介入（营养支持、观赛陪伴），而非绑定任何个体运动员。</p>
+
+    <h3>事件三：名单「缺席遗憾」与电竞圈层内耗（争议带）</h3>
+    <p>全红婵、樊振东缺席仍是当日遗憾与质疑的集中点（含台媒报道转引）；电竞侧「第一志愿内定、第二志愿萝卜坑」的举报拉锯与粉丝互撕（AG/一诺、JDG/清融、第五人格 ivl）持续消耗圈层情绪，但互动势能弱、未破圈。</p>
+    <div class="quote">太遗憾了！全红婵和樊振东缺席亚运会，听听台媒怎么说<span class="src">微博 · 元宝团子好杮朵朵 · 09-08</span></div>
+    <div class="quote">怎么这两天老有投yyh的……第一志愿内定、第二志愿萝卜坑、第三志愿靠关系吗<span class="src">微博 · 盼雨无眠吃瓜房 · 09-08</span></div>
+    <p style="margin-top:8px;"><b>对伊利的机会与边界：</b>正面叙事应锚定「为国出征、拼搏凯旋」的群体情感与观赛场景，不绑定任何个体运动员的入选/缺席，规避身材、伤病、退役等敏感讨论。</p>
+  </div>
+
+  <!-- 章节5 品牌传播机会 -->
+  <div class="card">
+    <h2>5 品牌传播机会</h2>
+    <ul>
+      <li><b>观赛营养/陪伴场景：</b>多项赛事为早场（电竞上午开赛、观赛需早起），「早餐 + 观赛 + 能量补给」是高频组合，可借「早起看亚运」做早餐奶/即饮乳饮的场景绑定。</li>
+      <li><b>群像情感主线：</b>「为国出征、等你们凯旋」的定妆照/集结/高校学子叙事正情绪最稳，适合品牌以「营养陪伴、守护每一份热爱」的陪伴者身份介入，而非口号式助威。</li>
+      <li><b>电竞 Z 世代圈层：</b>第五人格/王者荣耀亚运版本互动强、年轻化，是触达 Z 世代的低门槛入口；可围绕「观赛搭子」「熬夜补给」「开黑能量」做轻量共创，避免硬广口吻。</li>
+      <li><b>倒计时节点：</b>距开幕 11 天，正处于「名单讨论 → 观赛预期」切换期，是提前占位观赛场景内容的最佳窗口；开幕后热度将向赛果与名场面集中。</li>
+    </ul>
+  </div>
+
+  <!-- 章节6 风险注意 -->
+  <div class="card">
+    <h2>6 风险注意</h2>
+    <ul class="risk">
+      <li><b>名单争议余温：</b>全红婵樊振东缺席、网传石宇奇退役等话题仍可能反复，品牌内容一律不绑定个体运动员入选/缺席。</li>
+      <li><b>电竞圈层内耗：</b>「内定/萝卜坑」质疑、举报拉锯与粉丝互撕（AG/一诺、JDG/清融、第五人格 ivl）声量不低，参与电竞话题时避免站队、避免放大粉圈对立。</li>
+      <li><b>健康与身材敏感：</b>「身材羞辱」「伤病」「退役」属红线区，任何内容不得触及运动员体型、伤病与个人选择。</li>
+      <li><b>预期落差：</b>赛果不及预期、临时退赛等可能引发情绪反噬，赛前借势内容应避免对成绩或选手状态的绝对化表达。</li>
+    </ul>
+  </div>
+
+  <!-- 章节7 数据说明 -->
+  <div class="card">
+    <h2>7 数据说明</h2>
+    <p class="muted">
+      · 报告日：2026-09-08；核心关键词范围：「亚运会/亚运」及其常见变体。<br>
+      · 统计平台：微信公众号、种草平台、微博、抖音、论坛、哔哩哔哩、知乎；声量为匹配关键词的可检索帖子数，互动量为点赞/评论/转发等合计。<br>
+      · 净NSR=(正面−负面)÷(正面+负面)，分母不含中性；情绪分布为公开可检索样本、非全量。<br>
+      · 阶段演进为抖音单平台逐日声量（09-02 至 09-08）；平台结构、情绪结构、热搜佐证均为报告日 09-08 当日口径。<br>
+      · 原帖抽样：微博、抖音各 50 条（2026-09-08），按互动量取头部样本；原声按平台与日期标注，个别有轻微截断。<br>
+      · 热搜佐证来自多平台热搜榜（2026-09-08，query_xdp_hot_search）；小红书常规全量热搜已下架，本次佐证未含小红书常规榜单。<br>
+      · 本报告不含电商成交与人群画像数据，相关判断仅基于可检索社媒内容。
+    </p>
+  </div>
+
+</div>
+</body>
+</html>
